@@ -81,13 +81,21 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Laravel
+                    TAREA 4.1
                 </div>
 
                 <div class="links">
-                    <a href="{{route('contacto')}}">Contacto</a>
-                    <a href="{{route('blog',1)}}">Blog</a>
-                    <a href="{{route('blogConNombre',[1,'Ander'])}}">Blog con nombre</a>
+                    <a href="{{route('contacto')}}">a)Contacto</a>
+                    <a href="{{route('blog',1)}}">b)Blog</a>
+                    <a href="{{route('blogConNombre',[1,'Ander'])}}">c)Blog con nombre</a>
+                </div>
+                <div class="title m-b-md">
+                    TAREA 4.2
+                </div>
+                <div class="links">
+                    <a href="{{route('saludo')}}">a)Saludo</a>
+                    <a href="{{route('saludoConNombre','Mikel')}}">a)Saludo con nombre</a>
+                    <a href="{{route('saludoConNombreColor',['Mikel','FF5733'])}}">a)Saludo con nombre y color</a>
                 </div>
             </div>
         </div>
