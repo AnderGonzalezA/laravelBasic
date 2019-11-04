@@ -37,3 +37,11 @@ Route::get('/saludo', 'SaludoController@saludo')->name('saludo');
 Route::get('/saludoConNombre/{nombre}', 'SaludoController@saludoConNombre')->name('saludoConNombre');
 
 Route::get('/saludoConNombreColor/{nombre}/{color?}', 'SaludoController@saludoConNombreColor')->name('saludoConNombreColor');
+
+Route::get('/formularioGet', 'SaludoController@formularioGet')->name('formularioGet');
+
+Route::get('/saludoGet', 'SaludoController@saludoGet')->name('saludoGet');
+
+Route::get('/formularioPost', 'SaludoController@formularioPost')->name('formularioPost');
+
+Route::post('/saludoPost', 'SaludoController@saludoPost')->name('saludoPost');

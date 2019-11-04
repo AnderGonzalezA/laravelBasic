@@ -5,6 +5,11 @@
     <title></title>
   </head>
   <body>
-    Kaixo <?php echo($nombre); ?>!
+    Kaixo <?php
+    if (!isset($apellido)){
+        echo($nombre);
+    }else{
+      echo($nombre . " " . $apellido);
+    }?>!
   </body>
 </html>

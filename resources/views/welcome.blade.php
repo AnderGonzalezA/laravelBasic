@@ -83,7 +83,6 @@
                 <div class="title m-b-md">
                     TAREA 4.1
                 </div>
-
                 <div class="links">
                     <a href="{{route('contacto')}}">a)Contacto</a>
                     <a href="{{route('blog',1)}}">b)Blog</a>
@@ -94,8 +93,15 @@
                 </div>
                 <div class="links">
                     <a href="{{route('saludo')}}">a)Saludo</a>
-                    <a href="{{route('saludoConNombre','Mikel')}}">a)Saludo con nombre</a>
-                    <a href="{{route('saludoConNombreColor',['Mikel','FF5733'])}}">a)Saludo con nombre y color</a>
+                    <a href="{{route('saludoConNombre','Mikel')}}">b)Saludo con nombre</a>
+                    <a href="{{route('saludoConNombreColor',['Mikel','FF5733'])}}">c)Saludo con nombre y color</a>
+                </div>
+                <div class="title m-b-md">
+                    TAREA 4.3
+                </div>
+                <div class="links">
+                    <a href="{{route('formularioGet')}}">a)Formulario get</a>
+                    <a href="{{route('formularioPost')}}">b)Formulario post</a>
                 </div>
             </div>
         </div>
