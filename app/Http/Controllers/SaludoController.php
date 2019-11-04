@@ -42,4 +42,19 @@ class SaludoController extends Controller
 
     return view('saludos',['nombre' => $nombre,'apellido' => $apellido, 'idiomas' => $idiomasArray]);
   }
+
+  function formularioPost2(){
+    return view('mismaVistaJson');
+  }
+
+  function saludoPost2(Request $request){
+    $nombre = $request->input('nombre');
+    $apellido = $request->input('apellido');
+
+    $idiomasString = file_get_contents("js/saludos.json");
+    $idiomasArray = json_decode($idiomasString,true);
+
+    return view('mismaVistaJson',['nombre' => $nombre,'apellido' => $apellido, 'idiomas' => $idiomasArray]);
+  }
+
 }

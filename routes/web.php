@@ -45,3 +45,7 @@ Route::get('/saludoGet', 'SaludoController@saludoGet')->name('saludoGet');
 Route::get('/formularioPost', 'SaludoController@formularioPost')->name('formularioPost');
 
 Route::post('/saludoPost', 'SaludoController@saludoPost')->name('saludoPost');
+
+Route::get('/formularioPost2', 'SaludoController@formularioPost2')->name('formularioPost2');
+
+Route::post('/saludoPost2', 'SaludoController@saludoPost2')->name('saludoPost2');
