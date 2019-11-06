@@ -49,3 +49,7 @@ Route::post('/saludoPost', 'SaludoController@saludoPost')->name('saludoPost');
 Route::get('/formularioPost2', 'SaludoController@formularioPost2')->name('formularioPost2');
 
 Route::post('/saludoPost2', 'SaludoController@saludoPost2')->name('saludoPost2');
+
+Route::get('/formularioValidado','SaludoController@formularioValidado')->name('formularioValidado');
+
+Route::post('/mostrarValidado','SaludoController@mostrarValidado')->name('mostrarValidado');

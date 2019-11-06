@@ -54,7 +54,30 @@ class SaludoController extends Controller
     $idiomasString = file_get_contents("js/saludos.json");
     $idiomasArray = json_decode($idiomasString,true);
 
-    return view('mismaVistaJson',['nombre' => $nombre,'apellido' => $apellido, 'idiomas' => $idiomasArray]);
+    return view('mismaVistaJson',['nombre' => $nombre, 'apellido' => $apellido, 'idiomas' => $idiomasArray]);
   }
 
+  function formularioValidado(){
+    return view('formularioValidado');
+  }
+
+  function mostrarValidado(Request $request){
+    $nombre = $request->input('nombre');
+    $apellido = $request->input('apellido');
+    $email = $request->input('email');
+    $telefono = $request->input('telefono');
+    if (!empty($nombre) && !empty($apellido) && !empty($email) && !empty($telefono)){
+      if(!is_string($nombre) || strlen($nombre)<2 || strlen($nombre)>15){
+        return ('Inserta un nombre válido');
+      }elseif (!is_string($apellido) || strlen($apellido)<2 || strlen($apellido)>15) {
+        return ('Inserta un apellido válido');
+      }else if(strlen($telefono)!=9 || !preg_match("/^\d+$/", $telefono)){
+        return ('Inserta un telefono válido');
+      }else{
+        return view('mostrarValidado',['nombre' => $nombre, 'apellido' => $apellido, 'email' => $email, 'telefono' => $telefono]);
+      }
+    }else{
+      return('Rellena todos los campos');
+    }
+  }
 }

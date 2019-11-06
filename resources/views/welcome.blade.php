@@ -104,6 +104,12 @@
                     <a href="{{route('formularioPost')}}">b)Formulario post</a>
                     <a href="{{route('formularioPost2')}}">b)Formulario post misma vista</a>
                 </div>
+                <div class="title m-b-md">
+                    TAREA 4.4
+                </div>
+                <div class="links">
+                    <a href="{{route('formularioValidado')}}">a)Formulario validado</a>
+                </div>
             </div>
         </div>
     </body>
