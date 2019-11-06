@@ -5,9 +5,9 @@
     <title></title>
   </head>
   <body>
-    <label>Nombre: </label>{{$nombre}}<br>
-    <label>Apellido: </label>{{$apellido}}<br>
-    <label>Email: </label>{{$email}}<br>
-    <label>Telefono: </label>{{$telefono}}<br>
+    Nombre: {{$nombre}}<br>
+    Apellido: {{$apellido}}<br>
+    Email: {{$email}}<br>
+    Telefono: {{$telefono}}<br>
   </body>
 </html>

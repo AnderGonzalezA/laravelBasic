@@ -66,13 +66,21 @@ class SaludoController extends Controller
     $apellido = $request->input('apellido');
     $email = $request->input('email');
     $telefono = $request->input('telefono');
+
+    $primerNumeroValido = true;
+    if (substr($telefono,0,1) !== '6'){
+      if (substr($telefono,0,1) !== '7'){
+        $primerNumeroValido = false;
+      }
+    }
+
     if (!empty($nombre) && !empty($apellido) && !empty($email) && !empty($telefono)){
-      if(!is_string($nombre) || strlen($nombre)<2 || strlen($nombre)>15){
+      if(!is_string($nombre) || preg_match('/[^A-Za-z]/', $nombre) || strlen($nombre)<2 || strlen($nombre)>15){
         return ('Inserta un nombre válido');
-      }elseif (!is_string($apellido) || strlen($apellido)<2 || strlen($apellido)>15) {
+      }elseif (!is_string($apellido) || preg_match('/[^A-Za-z]/', $apellido) || strlen($apellido)<2 || strlen($apellido)>15) {
         return ('Inserta un apellido válido');
-      }else if(strlen($telefono)!=9 || !preg_match("/^\d+$/", $telefono)){
-        return ('Inserta un telefono válido');
+      }else if(strlen($telefono)!=9 || !preg_match("/^\d+$/", $telefono) || !$primerNumeroValido){
+        return ('Inserta un telefono válido' . substr($telefono,0,1));
       }else{
         return view('mostrarValidado',['nombre' => $nombre, 'apellido' => $apellido, 'email' => $email, 'telefono' => $telefono]);
       }
