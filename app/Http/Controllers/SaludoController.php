@@ -112,7 +112,8 @@ class SaludoController extends Controller
     $apellido = $request->input('apellido');
     $email = $request->input('email');
     $telefono = $request->input('telefono');
+    $dni = $request->input('dni');
 
-    return view('mostrarValidado',['nombre' => $nombre, 'apellido' => $apellido, 'email' => $email, 'telefono' => $telefono]);
+    return view('mostrarValidado',['nombre' => $nombre, 'apellido' => $apellido, 'email' => $email, 'telefono' => $telefono,'dni' => $dni]);
   }
 }

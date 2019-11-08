@@ -23,6 +23,10 @@
       @if ($errors->has('telefono'))
         {{$errors->first('telefono')}}
       @endif<br>
+      <label>DNI: </label><input type="string" name="dni" value="{{old('dni')}}">
+      @if ($errors->has('dni'))
+        {{$errors->first('dni')}}
+      @endif<br>
       <input type="submit" name="" value="Validar">
     </form>
     @if ($errors->any())

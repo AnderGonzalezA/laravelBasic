@@ -3,6 +3,7 @@
 namespace App\Http\Requests;
 
 use Illuminate\Foundation\Http\FormRequest;
+use App\Rules\Dni;
 
 class ContactoRequest extends FormRequest
 {
@@ -27,7 +28,8 @@ class ContactoRequest extends FormRequest
           'nombre' => 'required|min:2|max:15',
           'apellido' => 'required|min:2|max:20',
           'email' => 'required|email',
-          'telefono' => ['nullable','regex:/^[6|7|9][0-9]{8}$/']
+          'telefono' => ['nullable','regex:/^[6|7|9][0-9]{8}$/'],
+          'dni' => ['required', new Dni]
         ];
     }
 
