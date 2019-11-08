@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use App\Http\Requests\ContactoRequest;
 
 class SaludoController extends Controller
 {
@@ -62,10 +63,7 @@ class SaludoController extends Controller
   }
 
   function mostrarValidado(Request $request){
-    $nombre = $request->input('nombre');
-    $apellido = $request->input('apellido');
-    $email = $request->input('email');
-    $telefono = $request->input('telefono');
+    /*
 
     $primerNumeroValido = true;
     if (substr($telefono,0,1) !== '6'){
@@ -86,6 +84,35 @@ class SaludoController extends Controller
       }
     }else{
       return('Rellena todos los campos');
-    }
+    }*/
+
+
+    $validatedData = $request->validate([
+      'nombre' => 'required|min:2|max:15',
+      'apellido' => 'required|min:2|max:20',
+      'email' => 'required|email',
+      'telefono' => ['nullable','regex:/^[6|7|9][0-9]{8}$/']
+    ]);
+
+    $nombre = $request->input('nombre');
+    $apellido = $request->input('apellido');
+    $email = $request->input('email');
+    $telefono = $request->input('telefono');
+
+    return view('mostrarValidado',['nombre' => $nombre, 'apellido' => $apellido, 'email' => $email, 'telefono' => $telefono]);
+  }
+
+  function formularioValidado2(){
+    return view('formularioValidado2');
+  }
+
+  function mostrarValidado2(ContactoRequest $request){
+
+    $nombre = $request->input('nombre');
+    $apellido = $request->input('apellido');
+    $email = $request->input('email');
+    $telefono = $request->input('telefono');
+
+    return view('mostrarValidado',['nombre' => $nombre, 'apellido' => $apellido, 'email' => $email, 'telefono' => $telefono]);
   }
 }

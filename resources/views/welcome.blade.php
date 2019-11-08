@@ -109,6 +109,7 @@
                 </div>
                 <div class="links">
                     <a href="{{route('formularioValidado')}}">a)Formulario validado</a>
+                    <a href="{{route('formularioValidado2')}}">a)Formulario validado con una nueva request</a>
                 </div>
             </div>
         </div>

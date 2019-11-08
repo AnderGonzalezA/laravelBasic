@@ -5,7 +5,7 @@
     <title></title>
   </head>
   <body>
-    <form class="" action="{{route('mostrarValidado')}}" method="post">
+    <form class="" action="{{route('mostrarValidado2')}}" method="post">
       @csrf
       <label>Nombre: </label><input type="text" name="nombre" value="{{old('nombre')}}">
       @if ($errors->has('nombre'))
